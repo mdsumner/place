@@ -21,17 +21,19 @@
 #'
 #' where(147, -42, wh = c(2000, 3000))
 where <- function(x, y = NULL, wh = 1.852e3 * 60) {
-  if (missing(x) && missing(y)) {
+  if (missing(x) && is.null(y)) {
     x <- runif(1L, -180, 180)
     y <- runif(1L, -90, 90)
   }
-  if (missing(y)) {
+  if (is.null(y)) {
     if (length(x) < 2) stop("both x, and y (longitude,latitude) must be given")
   }
 
-
-  xy <- do.call(cbind, xy.coords(x, y)[c("x", "y")])[1L, , drop = FALSE]  ## we only get one
-
+  if (length(x) == 2) {
+    xy <- x
+  } else {
+    xy <- do.call(cbind, xy.coords(x, y)[c("x", "y")])[1L, , drop = FALSE]  ## we only get one
+  }
   wh <- rep(wh, length.out = 2L)
   ## should we do this??  NO
   #if (length(wh) < 2) wh <- c(1/cos(xy[2L] * pi/180), 1) * wh
