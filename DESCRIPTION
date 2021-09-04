@@ -1,12 +1,13 @@
 Package: where
-Title: Captures an Intended Region Specified as a Point and a Width and Height either side. 
+Title: Captures an Intended Region Specified as a Point and a Distance or Pair of Distances. 
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Michael",
            family = "Sumner",
            role = c("aut", "cre"),
            email = "mdsumner@gmail.com")
-Description: Specify a region by location and distance either side. 
+Description: Specify a region by location and distance either side.This package doesn't 
+ do anything with this information, it just provides a way to capture this one idea.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
