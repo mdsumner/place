@@ -1,5 +1,5 @@
 Package: where
-Title: Captures an Intended Region Specified as a Point and a Distance or Pair of Distances. 
+Title: Captures an Intended Region Specified as a Point and a Distance 
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Michael",

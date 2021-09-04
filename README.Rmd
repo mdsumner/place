@@ -1,0 +1,58 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# where
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/mdsumner/where/workflows/R-CMD-check/badge.svg)](https://github.com/mdsumner/where/actions)
+[![CRAN status](https://www.r-pkg.org/badges/version/where)](https://CRAN.R-project.org/package=where)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
+The goal of where is to specify a region simply as point (longitude,latitude) and a region around that. 
+
+This package does absolutely nothing with this information, but other packages might (get where I'm going ...?). 
+
+## Installation
+
+You can install  the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("mdsumner/where")
+```
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(where)
+
+## get me outta here
+where()
+```
+
+Ok, get me somewhere specific. 
+
+```{r somewhere}
+where(156, 34, wh = 100000)  ## 100km either side of that location
+```
+
+---
+
+## Code of Conduct
+
+Please note that the where project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
