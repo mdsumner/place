@@ -47,6 +47,9 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="news/index.html">Changelog</a>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
@@ -74,6 +77,7 @@
 
 <p>The goal of where is to specify a region simply as point (longitude,latitude) and a region around that.</p>
 <p>This package does absolutely nothing with this information, but other packages might (get where I’m going …?).</p>
+<p>Data at <a href="http://a0.ortho.tiles.virtualearth.net/tiles/">virtualearth</a>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -91,15 +95,15 @@
 
 <span class="co">## get me outta here</span>
 <span class="fu"><a href="reference/where.html">where</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; [1] "where : -167.4077, 42.66711 (lon, lat)"</span>
-<span class="co">#&gt; [1] "width : 111120"</span>
-<span class="co">#&gt; [1] "height: 111120"</span></code></pre></div>
+<span class="co">#&gt; where : 1.100433, 72.30982 (lon, lat)</span>
+<span class="co">#&gt; width : 111120</span>
+<span class="co">#&gt; height: 111120</span></code></pre></div>
 <p>Ok, get me somewhere specific.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/where.html">where</a></span><span class="op">(</span><span class="fl">156</span>, <span class="fl">34</span>, wh <span class="op">=</span> <span class="fl">100000</span><span class="op">)</span>  <span class="co">## 100km either side of that location</span>
-<span class="co">#&gt; [1] "where : 156, 34 (lon, lat)"</span>
-<span class="co">#&gt; [1] "width : 1e+05"</span>
-<span class="co">#&gt; [1] "height: 1e+05"</span></code></pre></div>
+<span class="co">#&gt; where : 156, 34 (lon, lat)</span>
+<span class="co">#&gt; width : 1e+05</span>
+<span class="co">#&gt; height: 1e+05</span></code></pre></div>
 <hr>
 </div>
 <div id="code-of-conduct" class="section level2">
