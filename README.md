@@ -18,6 +18,8 @@ The goal of where is to specify a region simply as point
 This package does absolutely nothing with this information, but other
 packages might (get where I’m going …?).
 
+Data at [virtualearth](http://a0.ortho.tiles.virtualearth.net/tiles/).
+
 ## Installation
 
 You can install the development version from
@@ -37,18 +39,18 @@ library(where)
 
 ## get me outta here
 where()
-#> [1] "where : -167.4077, 42.66711 (lon, lat)"
-#> [1] "width : 111120"
-#> [1] "height: 111120"
+#> where : 1.100433, 72.30982 (lon, lat)
+#> width : 111120
+#> height: 111120
 ```
 
 Ok, get me somewhere specific.
 
 ``` r
 where(156, 34, wh = 100000)  ## 100km either side of that location
-#> [1] "where : 156, 34 (lon, lat)"
-#> [1] "width : 1e+05"
-#> [1] "height: 1e+05"
+#> where : 156, 34 (lon, lat)
+#> width : 1e+05
+#> height: 1e+05
 ```
 
 ------------------------------------------------------------------------

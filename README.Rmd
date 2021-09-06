@@ -25,6 +25,8 @@ The goal of where is to specify a region simply as point (longitude,latitude) an
 
 This package does absolutely nothing with this information, but other packages might (get where I'm going ...?). 
 
+Data at [virtualearth](http://a0.ortho.tiles.virtualearth.net/tiles/). 
+
 ## Installation
 
 You can install  the development version from [GitHub](https://github.com/) with:
