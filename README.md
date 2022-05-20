@@ -41,7 +41,7 @@ library(place)
 
 ## get me outta here
 where()
-#> where : -35.79906, 49.49449 (lon, lat)
+#> where : 88.63528, 27.45667 (lon, lat)
 #> width : 111120
 #> height: 111120
 ```

@@ -42,9 +42,9 @@ place.character <- function(x, dimension = 512L, family = "laea", ...) {
 
   if (family %in% conics) {
     lat_1_2 <- w$where[2] + c(-1, 1) * w$wh[2] * cos(w$where[2] * pi/180) / 111120
-    crs <- sprintf("+proj=%s +lon_0=%.1f +lat_0=%.1f +lat_1=%.1f +lat_2=%.1f +datum=WGS84", family, w$where[1], w$where[2], lat_1_2[1], lat_1_2[2])
+    crs <- sprintf("+proj=%s +lon_0=%f +lat_0=%f +lat_1=%f +lat_2=%f +datum=WGS84", family, w$where[1], w$where[2], lat_1_2[1], lat_1_2[2])
   } else {
-    crs <- sprintf("+proj=%s +lon_0=%.1f +lat_0=%.1f +datum=WGS84", family, w$where[1], w$where[2])
+    crs <- sprintf("+proj=%s +lon_0=%f +lat_0=%f +datum=WGS84", family, w$where[1], w$where[2])
   }
 
   if (family %in% c("merc", "eqc")) {
