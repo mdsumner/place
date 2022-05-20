@@ -1,13 +1,14 @@
 Package: place
-Title: Captures an Intended Region Specified as a Point and a Distance 
-Version: 0.0.0.9000
+Title: Encapsulate Definition of Location
+Version: 0.0.0.9001
 Authors@R: 
     person(given = "Michael",
            family = "Sumner",
            role = c("aut", "cre"),
            email = "mdsumner@gmail.com")
-Description: Specify a region by location and distance either side.This package doesn't 
- do anything with this information, it just provides a way to capture this one idea.
+Description: Specify a region by simple heuristics, providing a place name or details about a specific
+ location and distance either side.This package doesn't do anything with this information, just provides 
+ a way to capture this one idea.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -15,3 +16,9 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 URL: https://github.com/mdsumner/where
 BugReports: https://github.com/mdsumner/where/issues
+Depends: 
+    R (>= 2.10)
+Suggests: 
+    tidygeocoder
+Imports: 
+    grDevices

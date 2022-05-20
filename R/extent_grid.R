@@ -9,7 +9,7 @@
 #'
 #' @return list of extent, dimension, projection
 #' @export
-#'
+#' @importFrom grDevices dev.cur dev.size
 #' @examples
 #' extent_grid(c(0, 1, 0, 2))
 extent_grid <- function(extent, dim = NULL, projection = NULL, lonlat = FALSE) {

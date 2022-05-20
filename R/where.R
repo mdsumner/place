@@ -56,3 +56,8 @@ print.where <- function(x, ...) {
   cat(sprintf("width : %s\n", format(x$wh[1L])))
   cat(sprintf("height: %s\n", format(x$wh[2L])))
 }
+#' @name dim
+#' Export
+dim.where <- function(x) {
+  c(1L, 1L)
+}

@@ -42,6 +42,8 @@ This is a basic example which shows you how to solve a common problem:
 ```{r example}
 library(place)
 
+
+
 ## get me outta here
 where()
 ```
@@ -51,6 +53,17 @@ Ok, get me somewhere specific.
 ```{r somewhere}
 where(156, 34, wh = 100000)  ## 100km either side of that location
 ```
+
+More useful, give me a defined discretized region around a location. 
+
+```{r somewhere-else}
+where(147, -42, wh = c(1, 1) * 5000)
+
+place("1 George St, Bathurst NSW", wh = c(1, 1.6) * 15000, dimension = 1024)
+
+```
+
+
 
 ---
 

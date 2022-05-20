@@ -4,9 +4,9 @@
 \name{place-package}
 \alias{place-package}
 \alias{_PACKAGE}
-\title{place: Captures an Intended Region Specified as a Point and a Distance}
+\title{place: Encapsulate Definition of Location}
 \description{
-Specify a region by location and distance either side.This package doesn't do anything with this information, it just provides a way to capture this one idea.
+Specify a region by simple heuristics, providing a place name or details about a specific location and distance either side.This package doesn't do anything with this information, just provides a way to capture this one idea.
 }
 \seealso{
 Useful links:
