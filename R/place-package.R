@@ -1,5 +1,5 @@
 #' @keywords internal
-#' @aliases where-package
+#' @aliases place-package
 "_PACKAGE"
 
 # The following block is used by usethis to automatically manage

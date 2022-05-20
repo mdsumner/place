@@ -13,15 +13,15 @@ knitr::opts_chunk$set(
 )
 ```
 
-# where
+# place
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/mdsumner/where/workflows/R-CMD-check/badge.svg)](https://github.com/mdsumner/where/actions)
-[![CRAN status](https://www.r-pkg.org/badges/version/where)](https://CRAN.R-project.org/package=where)
+[![R-CMD-check](https://github.com/mdsumner/place/workflows/R-CMD-check/badge.svg)](https://github.com/mdsumner/place/actions)
+[![CRAN status](https://www.r-pkg.org/badges/version/place)](https://CRAN.R-project.org/package=place)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of where is to specify a region simply as point (longitude,latitude) and a region around that. 
+The goal of place is to specify a region simply as point (longitude,latitude) and a region around that. 
 
 This package does absolutely nothing with this information, but other packages might (get where I'm going ...?). 
 
@@ -33,14 +33,14 @@ You can install  the development version from [GitHub](https://github.com/) with
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("mdsumner/where")
+remotes::install_github("mdsumner/place")
 ```
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(where)
+library(place)
 
 ## get me outta here
 where()
@@ -56,5 +56,5 @@ where(156, 34, wh = 100000)  ## 100km either side of that location
 
 ## Code of Conduct
 
-Please note that the where project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+Please note that the place project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
 
