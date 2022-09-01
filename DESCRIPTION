@@ -1,6 +1,6 @@
 Package: place
 Title: Encapsulate Definition of Location
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R: 
     person(given = "Michael",
            family = "Sumner",
@@ -13,7 +13,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.1
 URL: https://github.com/mdsumner/where
 BugReports: https://github.com/mdsumner/where/issues
 Depends: 

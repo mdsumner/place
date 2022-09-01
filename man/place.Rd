@@ -14,7 +14,7 @@ place(x, dimension = 512L, family = "laea", ...)
 
 \item{dimension}{number of pixels per margin (length one and aspect ratio is automatic)}
 
-\item{family}{projection family 'laea' default}
+\item{family}{projection family 'laea' default, or an actual projection string}
 
 \item{...}{other arguments passed to \link{where}}
 }
@@ -22,7 +22,10 @@ place(x, dimension = 512L, family = "laea", ...)
 list of extent, dimension, projection
 }
 \description{
-Place
+Family
+}
+\details{
+Note that if you give a longlat family, you should give a wh to where in degrees (we might fix)
 }
 \examples{
 place("Hobart")

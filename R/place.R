@@ -1,10 +1,15 @@
 
 #' Place
 #'
+#' Family
+#'
+#' Note that if you give a longlat family, you should give a wh to where in degrees (we might fix)
+#'
 #' @param x place name (a city)
 #' @param dimension number of pixels per margin (length one and aspect ratio is automatic)
-#' @param family projection family 'laea' default
+#' @param family projection family 'laea' default, or an actual projection string
 #' @param ... other arguments passed to [where]
+#'
 #'
 #' @return list of extent, dimension, projection
 #' @export
@@ -40,6 +45,18 @@ place.character <- function(x, dimension = 512L, family = "laea", ...) {
   ##dput(trimws( unlist(lapply(strsplit(system("proj -lp | grep conic --ignore-case", intern = T), ":"), "[", 1L))))
   conics <- c("bipc", "ccon", "eqdc", "imw_p", "lcc", "lcca", "leac", "pconic", "poly", "rpoly")
 
+  if (grepl(".*\\+.*", family) || grepl("[0-9]", family) ) {
+    ## assume we gave an actual projection string +proj, AUTH:, or wkt
+    crs <- family
+    if (grepl("3857", family ) || grepl("merc", family)) {
+    warning("place heuristics for the projection don't work with Mercator yet")
+
+    }
+  } else {
+      if (family %in% c("merc", "eqc")) {
+    warning("place heuristics for the projection don't work with Mercator or Equidistant Cylindrical (yet)")
+  }
+
   if (family %in% conics) {
     lat_1_2 <- w$where[2] + c(-1, 1) * w$wh[2] * cos(w$where[2] * pi/180) / 111120
     crs <- sprintf("+proj=%s +lon_0=%f +lat_0=%f +lat_1=%f +lat_2=%f +datum=WGS84", family, w$where[1], w$where[2], lat_1_2[1], lat_1_2[2])
@@ -47,8 +64,7 @@ place.character <- function(x, dimension = 512L, family = "laea", ...) {
     crs <- sprintf("+proj=%s +lon_0=%f +lat_0=%f +datum=WGS84", family, w$where[1], w$where[2])
   }
 
-  if (family %in% c("merc", "eqc")) {
-    warning("place heuristics for the projection don't work with Mercator or Equidistant Cylindrical (yet)")
+
   }
   ## here do aspect ratio, because we might have a where()$wh aspect ratio
   if (length(dimension) == 1L) {

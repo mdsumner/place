@@ -1,4 +1,6 @@
-# place 0.0.0.9001
+# place 0.0.0.9002
+
+* Allow input of actual projection string to 'family'.
 
 * New data set `city`. 
 
