@@ -71,5 +71,5 @@ place.character <- function(x, dimension = 512L, family = "laea", ...) {
     rat <- w$wh[2]/w$wh[1]
     dimension <- round(rep(dimension, 2) * sort(c(1, rat)))
   }
-  list(extent = c(-1, 1, -1, 1) * rep(w$wh, each = 2), dimension = dimension, projection = crs)
+  list(extent = c(-1, 1, -1, 1) * rep(w$wh, each = 2), dimension = dimension, projection = crs, point = w$where )
 }
