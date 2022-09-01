@@ -35,7 +35,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">place</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9002</span>
       </span>
     </div>
 
@@ -79,46 +79,46 @@
 </h2>
 <p>You can install the development version from <a href="https://github.com/" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"mdsumner/place"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"mdsumner/place"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
 </h2>
 <p>This is a basic example which shows you how to solve a common problem:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mdsumner/where" class="external-link">place</a></span><span class="op">)</span>
-
-
-
-<span class="co">## get me outta here</span>
-<span class="fu"><a href="reference/where.html">where</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; where : 88.63528, 27.45667 (lon, lat)</span>
-<span class="co">#&gt; width : 111120</span>
-<span class="co">#&gt; height: 111120</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/mdsumner/where" class="external-link">place</a></span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span></span>
+<span><span class="co">## get me outta here</span></span>
+<span><span class="fu"><a href="reference/where.html">where</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; where : 88.63528, 27.45667 (lon, lat)</span></span>
+<span><span class="co">#&gt; width : 111120</span></span>
+<span><span class="co">#&gt; height: 111120</span></span></code></pre></div>
 <p>Ok, get me somewhere specific.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/where.html">where</a></span><span class="op">(</span><span class="fl">156</span>, <span class="fl">34</span>, wh <span class="op">=</span> <span class="fl">100000</span><span class="op">)</span>  <span class="co">## 100km either side of that location</span>
-<span class="co">#&gt; where : 156, 34 (lon, lat)</span>
-<span class="co">#&gt; width : 1e+05</span>
-<span class="co">#&gt; height: 1e+05</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/where.html">where</a></span><span class="op">(</span><span class="fl">156</span>, <span class="fl">34</span>, wh <span class="op">=</span> <span class="fl">100000</span><span class="op">)</span>  <span class="co">## 100km either side of that location</span></span>
+<span><span class="co">#&gt; where : 156, 34 (lon, lat)</span></span>
+<span><span class="co">#&gt; width : 1e+05</span></span>
+<span><span class="co">#&gt; height: 1e+05</span></span></code></pre></div>
 <p>More useful, give me a defined discretized region around a location.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/where.html">where</a></span><span class="op">(</span><span class="fl">147</span>, <span class="op">-</span><span class="fl">42</span>, wh <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span> <span class="op">*</span> <span class="fl">5000</span><span class="op">)</span>
-<span class="co">#&gt; where : 147, -42 (lon, lat)</span>
-<span class="co">#&gt; width : 5000</span>
-<span class="co">#&gt; height: 5000</span>
-
-<span class="fu"><a href="reference/place.html">place</a></span><span class="op">(</span><span class="st">"1 George St, Bathurst NSW"</span>, wh <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1.6</span><span class="op">)</span> <span class="op">*</span> <span class="fl">15000</span>, dimension <span class="op">=</span> <span class="fl">1024</span><span class="op">)</span>
-<span class="co">#&gt; Loading required namespace: tidygeocoder</span>
-<span class="co">#&gt; $extent</span>
-<span class="co">#&gt; [1] -15000  15000 -24000  24000</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $dimension</span>
-<span class="co">#&gt; [1] 1024 1638</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $projection</span>
-<span class="co">#&gt; [1] "+proj=laea +lon_0=149.6 +lat_0=-33.4 +datum=WGS84"</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/where.html">where</a></span><span class="op">(</span><span class="fl">147</span>, <span class="op">-</span><span class="fl">42</span>, wh <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span> <span class="op">*</span> <span class="fl">5000</span><span class="op">)</span></span>
+<span><span class="co">#&gt; where : 147, -42 (lon, lat)</span></span>
+<span><span class="co">#&gt; width : 5000</span></span>
+<span><span class="co">#&gt; height: 5000</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/place.html">place</a></span><span class="op">(</span><span class="st">"1 George St, Bathurst NSW"</span>, wh <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1.6</span><span class="op">)</span> <span class="op">*</span> <span class="fl">15000</span>, dimension <span class="op">=</span> <span class="fl">1024</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required namespace: tidygeocoder</span></span>
+<span><span class="co">#&gt; $extent</span></span>
+<span><span class="co">#&gt; [1] -15000  15000 -24000  24000</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $dimension</span></span>
+<span><span class="co">#&gt; [1] 1024 1638</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $projection</span></span>
+<span><span class="co">#&gt; [1] "+proj=laea +lon_0=149.6 +lat_0=-33.4 +datum=WGS84"</span></span></code></pre></div>
 <hr>
 </div>
 <div class="section level2">
@@ -187,7 +187,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
