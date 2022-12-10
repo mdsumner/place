@@ -64,7 +64,6 @@ place.character <- function(x, dimension = 512L, family = "laea", ...) {
     crs <- sprintf("+proj=%s +lon_0=%f +lat_0=%f +datum=WGS84", family, w$where[1], w$where[2])
   }
 
-
   }
   ## here do aspect ratio, because we might have a where()$wh aspect ratio
   if (length(dimension) == 1L) {
