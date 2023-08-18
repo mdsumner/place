@@ -44,19 +44,16 @@ place.character <- function(x, dimension = 512L, family = "laea", ...) {
   }
   ##dput(trimws( unlist(lapply(strsplit(system("proj -lp | grep conic --ignore-case", intern = T), ":"), "[", 1L))))
   conics <- c("bipc", "ccon", "eqdc", "imw_p", "lcc", "lcca", "leac", "pconic", "poly", "rpoly")
-
+offset <- c(0, 0)
   if (grepl(".*\\+.*", family) || grepl("[0-9]", family) ) {
     ## assume we gave an actual projection string +proj, AUTH:, or wkt
     crs <- family
-    if (grepl("3857", family ) || grepl("merc", family)) {
-    warning("place heuristics for the projection don't work with Mercator yet")
-
-    }
+    ## we need an offset
+    offset <- reproj::reproj_xy(matrix(w$where, ncol = 2), crs, source = "OGC:CRS84")
   } else {
-      if (family %in% c("merc", "eqc")) {
+    if (family %in% c("merc", "eqc")) {
     warning("place heuristics for the projection don't work with Mercator or Equidistant Cylindrical (yet)")
-  }
-
+}
   if (family %in% conics) {
     lat_1_2 <- w$where[2] + c(-1, 1) * w$wh[2] * cos(w$where[2] * pi/180) / 111120
     crs <- sprintf("+proj=%s +lon_0=%f +lat_0=%f +lat_1=%f +lat_2=%f +datum=WGS84", family, w$where[1], w$where[2], lat_1_2[1], lat_1_2[2])
@@ -65,10 +62,14 @@ place.character <- function(x, dimension = 512L, family = "laea", ...) {
   }
 
   }
+
+
   ## here do aspect ratio, because we might have a where()$wh aspect ratio
   if (length(dimension) == 1L) {
     rat <- w$wh[2]/w$wh[1]
     dimension <- round(rep(dimension, 2) * sort(c(1, rat)))
   }
-  list(extent = c(-1, 1, -1, 1) * rep(w$wh, each = 2), dimension = dimension, projection = crs, point = w$where )
+  ex <- c(-1, 1, -1, 1)* rep(w$wh, each = 2)
+  ex <- ex + rep(offset, each = 2)
+  list(extent = ex , dimension = dimension, projection = crs, point = w$where )
 }
